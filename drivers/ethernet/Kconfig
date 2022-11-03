@@ -19,7 +19,7 @@ source "subsys/net/Kconfig.template.log_config.net"
 config ETH_QEMU_IFACE_NAME
 	string "Network interface name for QEMU"
 	default "zeth"
-	depends on NET_QEMU_ETHERNET
+	depends on NET_QEMU_ETHERNET || NET_QEMU_VIRTIO
 	help
 	  The network interface name for QEMU. This value is given as
 	  a parameter to -nic qemu command line option. The network
@@ -54,6 +54,7 @@ source "drivers/ethernet/Kconfig.gecko"
 source "drivers/ethernet/Kconfig.w5500"
 source "drivers/ethernet/Kconfig.dsa"
 source "drivers/ethernet/Kconfig.xlnx_gem"
+source "drivers/ethernet/Kconfig.virtio_net"
 
 source "drivers/ethernet/phy/Kconfig"
 
